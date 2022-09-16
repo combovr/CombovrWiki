@@ -1,0 +1,6 @@
+site_name: ComboVR Wiki
+nav:
+    - Home: index.md
+    - Mark I: markI.md
+
+theme: readthedocs
