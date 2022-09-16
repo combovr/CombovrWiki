@@ -5,4 +5,4 @@
 
 ## 使用教程
 
-* [Mark I](/markI/)
+* [Mark I](markI.md)
