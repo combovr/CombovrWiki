@@ -3,4 +3,23 @@ nav:
     - Home: index.md
     - Mark I: markI.md
 
-theme: readthedocs
+theme: 
+    name: material
+    palette:
+        primary: black
+    
+        # Palette toggle for light mode
+        scheme: default
+        toggle:
+            icon: material/brightness-7 
+            name: Switch to dark mode
+
+        # Palette toggle for dark mode
+        scheme: slate
+        toggle:
+            icon: material/brightness-4
+            name: Switch to light mode
+    
+    font:
+        text: Gupter
+use_direcotry_urls: true

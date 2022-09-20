@@ -4,7 +4,7 @@
 
 
 ## 1. 安装 ComboVR Studio
-* 目前只支持 win10 及以上系统
+* 目前只支持 win10 及以上系统，下载地址: [点这里](https://github.com/combovr/ComboVR-software/releases)
 * 解压之后, 无需安装, 直接打开 `ComboVR Studio` 文件夹下的 `ComboVrStudio.exe` 即可运行。  
   打开后, 应看到如下界面.   
 ![ComboVR Studio](img/combovr_studio.png)
@@ -60,7 +60,9 @@ Save above settings? type yes to confirm, type no to start over:
 
 ## 5. 佩戴 Tracker
 将各tracker佩戴至相应位置，建议为各tracker贴上标签，方便后面使用。如果您不清楚某个tracker属于哪个部位，可以按下面的方式确定：
+
 * 将 tracker 开机或者关机，查看 Studio 界面上哪个部位的tracker的连接状态发生了变化
+
 * 或者，在tracker处于active状态时，转动tracker，查看 Studio 界面上哪个部位的tracker在发生转动    
 
 各tracker对应的绑定位置如下图所示 (位置不用很严格，小腿的tracker也可以绑在膝盖往下那一截，更不容易滑落；朝向无要求。主要是要绑紧，尽量使得运动时tracker和骨骼间不要有相对滑动。但也不用太紧，不然戴久了难受)：
@@ -89,7 +91,7 @@ Save above settings? type yes to confirm, type no to start over:
 ## 7. 在SteamVR中使用
 到上一步为止，动作跟踪功能已经实现了。但为了在SteamVR和它支持的游戏中(如VRChat)使用，还需安装steamvr的驱动，也很简单:   
 
-* 先关闭SteamVR, 将下载的 combo_openvr_driver.zip 解压，将解压出来的 `combo` 文件夹复制到 `SteamVR`的driver文件下下面 (driver的路径一般在: `C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\`). 
+* 先关闭SteamVR, 将之前`ComboVR-software`解压出来的`combo_openvr_driver/`下面的 `combo` 文件夹复制到 `SteamVR`的driver文件下下面 (driver的路径一般在: `C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\`). 
 ![combo openvr driver](img/combo_openvr_driver.png)
 
 * 打开steamvr, 应可看到多出来了3个tracker。
@@ -112,3 +114,6 @@ Save above settings? type yes to confirm, type no to start over:
 * 建议每次使用时，将各tracker依次开机后放在桌面上静置10秒左右，待tracker上的闪烁的指示灯由黄变绿时，再佩戴在身上
 
 * 充电时，tracker机身左下角的led灯指示充电状态: 橘色表示正在充电，绿色表示已充满.
+
+* 重新对齐。目前一般二三十分钟后，tracker的角度漂移会累积得比较大，需要重新对齐：   
+  按T-Pose站立，然后长按左手控制器上食指和中指处的扳机(扣到底)，坚持5s，即可看到已重新对齐。
