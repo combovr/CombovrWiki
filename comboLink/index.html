@@ -264,7 +264,7 @@
       
         <li class="md-nav__item">
   <a href="#3-tracker-wifi" class="md-nav__link">
-    3. 为 Tracker 设置 wifi
+    3. 为 主Tracker 设置 wifi
   </a>
   
 </li>
@@ -354,7 +354,7 @@
       
         <li class="md-nav__item">
   <a href="#3-tracker-wifi" class="md-nav__link">
-    3. 为 Tracker 设置 wifi
+    3. 为 主Tracker 设置 wifi
   </a>
   
 </li>
@@ -410,7 +410,12 @@
 
 
 <h1 id="combo-link">Combo Link</h1>
-<p><strong><em>Combo Link</em></strong> 是一套基于多个tracker的动作捕捉系统。第一次使用会相对麻烦，需要大概半小时左右，熟悉之后后续的使用很方便，每次设置基本一分钟左右。</p>
+<p><strong><em>Combo Link</em></strong> 是一套基于多个tracker的动作捕捉系统。它在全无线方案 <code>Mark I</code> 的基础上改进而来： <br />
+* 增加了高精度磁力计，漂移更小
+* 各tracker以有线方式串联到主tracker，时间同步在毫秒级别
+* 数据传输更稳定
+* 续航更持久，可轻松达到50小时及以上
+* 配置更简单，使用更方便</p>
 <h2 id="1-combovr-studio">1. 安装 ComboVR Studio</h2>
 <ul>
 <li>目前只支持 win10 及以上系统，下载地址: <a href="https://github.com/combovr/ComboVR-software/releases">点这里</a></li>
@@ -421,39 +426,14 @@
 <h2 id="2">2. 设置身体参数</h2>
 <p>关闭Studio, 在 <code>ComboVR Stduio</code> 文件夹下的player_config.json中设置身体参数(修改相应的数字即可，不要往里边打其他字):</p>
 <p><img alt="body params" src="../img/body_params.png" /></p>
-<h2 id="3-tracker-wifi">3. 为 Tracker 设置 wifi</h2>
-<p>这一步会稍微麻烦一点, 但只需初次使用的时候配置一次即可。 请确保电脑tracker使用的是同一个路由器，并且需要2.4G频段而不是5G频段。</p>
-<ul>
-<li>安装 <a href="https://www.arduino.cc/en/software">Arduino IDE</a> 并打开，请安装1.8.19版本。</li>
-<li>用usb线将一个tracker连接到电脑上，长按机身上的按键3s开机, 开机后应看到蓝灯亮起. 此时点击 Arduino 的 <code>工具</code> ---&gt; <code>端口</code>，应该会多出现一个 COM口，选择这个COM口. 
-<img alt="Arduino Serial" src="../img/arduino_serial.png" /></li>
-<li>选择好后，点击 <code>工具</code> ---&gt; <code>串口监视器</code> 打开 Arduino 的串口工具，将波特率选择为 115200.
-<img alt="Arduino Serial Monitor" src="../img/arduino_serial_monitor.png" /></li>
-<li>在输入栏输入你的wifi名称，按回车键发送。</li>
-</ul>
-<pre><code>type wifi password (max 32 characters): 
-</code></pre>
-<ul>
-<li>看到串口打印出上面的信息后，输入你的wifi密码，按回车键发送.</li>
-</ul>
-<pre><code>type computer ip: 
-</code></pre>
-<ul>
-<li>看到串口打印出上面的信息后，输入你的电脑ip, 按回车键发送.<br />
-(电脑ip可通过在终端用 <code>ipconfig</code> 命令查看)</li>
-</ul>
-<pre><code>Save above settings? type yes to confirm, type no to start over: 
-</code></pre>
-<ul>
-<li>
-<p>看到串口打印出上面的信息后，检查你之前输入的wifi名称、密码和ip，确认无误的话输入 yes 按回车键发送 (反之则发送no, tracker会自动重启，按上面次序重新输入), tracker 会保存设置并自动重启。重启后tracker应可连接上wifi，在你的电脑上打开 <code>ComboVR Studio</code>, 应可看到tracker已连接上 （Studio界面右上角<code>status</code>一栏，<code>lost</code>表示丢失连接，<code>active</code>表示已连接上) 。
-<img alt="Tracker Status" src="../img/tracker_status.png" /></p>
-</li>
-<li>
-<p>按上述操作，依次为每一个tracker配置好wifi。</p>
-</li>
-</ul>
-<p><strong><em>注意: 在 Studio 界面右上角的 <code>Fps</code> 一栏，显示的是tracker数据的刷新率，正常情况下应该保持在100左右，如果看到刷新率波动较大，应该是wifi信号不太好，可以将电脑、路由器和tracker放在同一个房间内</em></strong></p>
+<h2 id="3-tracker-wifi">3. 为 主Tracker 设置 wifi</h2>
+<p>如果您使用的是不带dongle的版本，则需要为主tracker配置wifi。步骤如下:
+1. 打开<code>ComboVR Studio</code>文件夹下的<code>MagCalApp.exe</code>
+2. 用usb线将主tracker(腰部tracker)连接到电脑，从右上角的<code>Serial Port</code>下拉框选择端口号
+3. 将wifi名称，密码和电脑ip(可通过在电脑终端输入ipconfig命令查看)写入右下角对应输入框中, 确认无误后点击<code>send</code>按钮发送
+4. 发送成功后会多出来一个<code>save</code>按钮, 点击<code>save</code>之后tracker就会保存wifi设置。
+5. 将tracker断电重启，重新打开<code>ComboVrStudio.exe</code>，应该就可以看到已经连上了</p>
+<p><img alt="wifi setting" src="../img/magcalapp_setwifi.png" /></p>
 <h2 id="4-steamvr">4. SteamVR 串流</h2>
 <p>保持Studio开启，请将VR头盔开机，打开SteamVR, 并将头盔串流 (有线或无线均可)。 <br />
 串流成功之后，应可看到Studio界面右上角<code>HMD</code>一栏的状态由<code>lost</code>变为<code>active</code>, 动一动头盔，应可看到界面上画的头盔也会跟着移动。   </p>
