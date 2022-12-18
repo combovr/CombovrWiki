@@ -22,15 +22,35 @@
 
 
 ## 3. 为 主Tracker 设置 wifi
-如果您使用的是不带dongle的版本，则需要为主tracker配置wifi。步骤如下:
-1. 打开`ComboVR Studio`文件夹下的`MagCalApp.exe`
-2. 用usb线将主tracker(腰部tracker)连接到电脑，从右上角的`Serial Port`下拉框选择端口号
-3. 将wifi名称，密码和电脑ip(可通过在电脑终端输入ipconfig命令查看)写入右下角对应输入框中, 确认无误后点击`send`按钮发送
-4. 发送成功后会多出来一个`save`按钮, 点击`save`之后tracker就会保存wifi设置。
-5. 将tracker断电重启，重新打开`ComboVrStudio.exe`，应该就可以看到已经连上了
+如果您使用的是不带dongle的版本，则需要为主tracker配置wifi。步骤如下:   
 
+1. 打开`ComboVR Studio`文件夹下的`MagCalApp.exe`   
+2. 用usb线将主tracker(腰部tracker)连接到电脑，从右上角的`Serial Port`下拉框选择端口号   
 
 ![wifi setting](img/magcalapp_setwifi.png)
+
+3. 将wifi名称，密码和电脑ip(可通过在电脑终端输入ipconfig命令查看)写入右下角对应输入框中, 点击`send`按钮发送，此时终端会打出类似如下信息，显示tracker已收到wifi信息
+
+```
+Received wifi settings:
+wifi name: xiaofeiyang
+wifi password: fakePassword
+server ip: 192.168.31.147
+```
+
+4. 检查无误后，点击`save`按钮，查看终端打印的信息，看到类似如下信息后即代表设置成功。
+
+```
+Writing wifi settings into EEPROM...
+Write credentials:
+ssid: fakePassword
+pwd: fy920507
+udp address: 192.168.31.147
+Wifi setttings saved!
+```
+
+
+
 
 
 ## 4. SteamVR 串流
@@ -42,11 +62,7 @@
 
 
 ## 5. 佩戴 Tracker
-将各tracker佩戴至相应位置，建议为各tracker贴上标签，方便后面使用。如果您不清楚某个tracker属于哪个部位，可以按下面的方式确定：
-
-* 将 tracker 开机或者关机，查看 Studio 界面上哪个部位的tracker的连接状态发生了变化
-
-* 或者，在tracker处于active状态时，转动tracker，查看 Studio 界面上哪个部位的tracker在发生转动    
+将各tracker佩戴至相应位置，出货时已为各tracker贴好标签，以方便区分每个tracker对应的位置。
 
 各tracker对应的绑定位置如下图所示 (位置不用很严格，小腿的tracker也可以绑在膝盖往下那一截，更不容易滑落；朝向无要求。主要是要绑紧，尽量使得运动时tracker和骨骼间不要有相对滑动。但也不用太紧，不然戴久了难受)：
 
@@ -91,12 +107,6 @@
 ---
 
 ## *注意事项*
-
-* 通过长按tracker机身上的按键3秒钟进行开关机
-
-* 建议每次使用时，将各tracker依次开机后放在桌面上静置10秒左右，待tracker上的闪烁的指示灯由黄变绿时，再佩戴在身上
-
-* 充电时，tracker机身左下角的led灯指示充电状态: 橘色表示正在充电，绿色表示已充满.
 
 * 重新对齐。目前一般二三十分钟后，tracker的角度漂移会累积得比较大，需要重新对齐：   
   按T-Pose站立，然后长按左手控制器上食指和中指处的扳机(扣到底)，坚持5s，即可看到已重新对齐。
