@@ -427,28 +427,37 @@
 <p>关闭Studio, 在 <code>ComboVR Stduio</code> 文件夹下的player_config.json中设置身体参数(修改相应的数字即可，不要往里边打其他字):</p>
 <p><img alt="body params" src="../img/body_params.png" /></p>
 <h2 id="3-tracker-wifi">3. 为 主Tracker 设置 wifi</h2>
-<p>如果您使用的是不带dongle的版本，则需要为主tracker配置wifi。步骤如下:
-1. 打开<code>ComboVR Studio</code>文件夹下的<code>MagCalApp.exe</code>
-2. 用usb线将主tracker(腰部tracker)连接到电脑，从右上角的<code>Serial Port</code>下拉框选择端口号
-3. 将wifi名称，密码和电脑ip(可通过在电脑终端输入ipconfig命令查看)写入右下角对应输入框中, 确认无误后点击<code>send</code>按钮发送
-4. 发送成功后会多出来一个<code>save</code>按钮, 点击<code>save</code>之后tracker就会保存wifi设置。
-5. 将tracker断电重启，重新打开<code>ComboVrStudio.exe</code>，应该就可以看到已经连上了</p>
+<p>如果您使用的是不带dongle的版本，则需要为主tracker配置wifi。步骤如下:   </p>
+<ol>
+<li>打开<code>ComboVR Studio</code>文件夹下的<code>MagCalApp.exe</code>   </li>
+<li>用usb线将主tracker(腰部tracker)连接到电脑，从右上角的<code>Serial Port</code>下拉框选择端口号   </li>
+</ol>
 <p><img alt="wifi setting" src="../img/magcalapp_setwifi.png" /></p>
+<ol>
+<li>将wifi名称，密码和电脑ip(可通过在电脑终端输入ipconfig命令查看)写入右下角对应输入框中, 点击<code>send</code>按钮发送，此时终端会打出类似如下信息，显示tracker已收到wifi信息</li>
+</ol>
+<pre><code>Received wifi settings:
+wifi name: xiaofeiyang
+wifi password: fakePassword
+server ip: 192.168.31.147
+</code></pre>
+<ol>
+<li>检查无误后，点击<code>save</code>按钮，查看终端打印的信息，看到类似如下信息后即代表设置成功。</li>
+</ol>
+<pre><code>Writing wifi settings into EEPROM...
+Write credentials:
+ssid: fakePassword
+pwd: fy920507
+udp address: 192.168.31.147
+Wifi setttings saved!
+</code></pre>
 <h2 id="4-steamvr">4. SteamVR 串流</h2>
 <p>保持Studio开启，请将VR头盔开机，打开SteamVR, 并将头盔串流 (有线或无线均可)。 <br />
 串流成功之后，应可看到Studio界面右上角<code>HMD</code>一栏的状态由<code>lost</code>变为<code>active</code>, 动一动头盔，应可看到界面上画的头盔也会跟着移动。   </p>
 <p><strong><em>这一步可以不用带上头盔操作，但 Oculus Quest2 会在取下头盔之后自动休眠， 导致收不到新的位置数据，可以将头盔上的红外接近传感器用胶布挡住(如下图所示)，这样它就不知道我们已经取下了头盔，从而不会很快进入休眠模式</em></strong>
 <img alt="Proximity Sensor" src="../img/oculus_quest2_proximity_sensor.jpg" /></p>
 <h2 id="5-tracker">5. 佩戴 Tracker</h2>
-<p>将各tracker佩戴至相应位置，建议为各tracker贴上标签，方便后面使用。如果您不清楚某个tracker属于哪个部位，可以按下面的方式确定：</p>
-<ul>
-<li>
-<p>将 tracker 开机或者关机，查看 Studio 界面上哪个部位的tracker的连接状态发生了变化</p>
-</li>
-<li>
-<p>或者，在tracker处于active状态时，转动tracker，查看 Studio 界面上哪个部位的tracker在发生转动    </p>
-</li>
-</ul>
+<p>将各tracker佩戴至相应位置，出货时已为各tracker贴好标签，以方便区分每个tracker对应的位置。</p>
 <p>各tracker对应的绑定位置如下图所示 (位置不用很严格，小腿的tracker也可以绑在膝盖往下那一截，更不容易滑落；朝向无要求。主要是要绑紧，尽量使得运动时tracker和骨骼间不要有相对滑动。但也不用太紧，不然戴久了难受)：</p>
 <p><img alt="Tracker Positions" src="../img/tracker_positions.png" /></p>
 <h2 id="6">6. 标定</h2>
@@ -493,19 +502,8 @@
 <hr />
 <h2 id="_1"><em>注意事项</em></h2>
 <ul>
-<li>
-<p>通过长按tracker机身上的按键3秒钟进行开关机</p>
-</li>
-<li>
-<p>建议每次使用时，将各tracker依次开机后放在桌面上静置10秒左右，待tracker上的闪烁的指示灯由黄变绿时，再佩戴在身上</p>
-</li>
-<li>
-<p>充电时，tracker机身左下角的led灯指示充电状态: 橘色表示正在充电，绿色表示已充满.</p>
-</li>
-<li>
-<p>重新对齐。目前一般二三十分钟后，tracker的角度漂移会累积得比较大，需要重新对齐： <br />
-  按T-Pose站立，然后长按左手控制器上食指和中指处的扳机(扣到底)，坚持5s，即可看到已重新对齐。</p>
-</li>
+<li>重新对齐。目前一般二三十分钟后，tracker的角度漂移会累积得比较大，需要重新对齐： <br />
+  按T-Pose站立，然后长按左手控制器上食指和中指处的扳机(扣到底)，坚持5s，即可看到已重新对齐。</li>
 </ul>
 
 
