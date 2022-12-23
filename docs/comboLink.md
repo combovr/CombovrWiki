@@ -9,13 +9,14 @@
 
 
 ## 1. 安装 ComboVR Studio
-* 目前只支持 win10 及以上系统，下载地址: [点这里](https://github.com/combovr/ComboVR-software/releases)
-* 解压之后, 无需安装, 直接打开 `ComboVR Studio` 文件夹下的 `ComboVrStudio.exe` 即可运行。  
+* 目前只支持 win10 及以上系统，下载地址: [点这里](https://pan.baidu.com/s/1tPnWpzpy8PyTVrCdwJia6w?pwd=vyqe), 提取码: vyqe
+* 解压之后, 无需安装, 直接打开 `ComboVR Studio` 文件夹下的 `WonderVrStudio.exe` 即可运行。  
   打开后, 应看到如下界面.   
 ![ComboVR Studio](img/combovr_studio.png)
 
 
 ## 2. 设置身体参数
+***可以先跳过这一步，等走完整个流程之后再回来调整参数***   
 关闭Studio, 在 `ComboVR Stduio` 文件夹下的player_config.json中设置身体参数(修改相应的数字即可，不要往里边打其他字):
 
 ![body params](img/body_params.png)
@@ -62,7 +63,9 @@ Wifi setttings saved!
 
 ![Tracker Positions](img/tracker_positions.png)
 
-* 将充电宝揣在兜里，通过typec线给腰部tracker供电。插上电后，等几秒钟，tracker
+* 佩戴好Tracker后，用网线将腰部tracker和大腿tracker连起来，大腿tracker和小腿tracker连起来，如果还有胸部tracker，则用附带的四色小线将腰部tracker和胸部tracker连起来。
+
+* 将充电宝揣在兜里，通过typec线给腰部tracker供电。插上电后，等几秒钟，tracker会开始闪绿灯，表明已连上wifi并向电脑发送数据。
 
 ## 5. 标定
 这一步是为了标定出tracker和人体骨骼之间的相对位置关系，这样我们才能通过tracker的姿态来求解人体骨骼的姿态。请通过如下方法操作：   
@@ -80,6 +83,17 @@ Wifi setttings saved!
 * 然后点击出现的 `Calibrate` 按钮，即标定完成。此时做一些动作，应可看到 Studio 画面中的骨骼随之移动。如发现画面中的人物姿态不是很准，比如脚出现以前一后，可尝试重复2、3、4步骤重新标定，如果多次标定还是不准，应该检查一下tracker是不是佩戴紧了，是不是有滑动。
 
 * 最后，多测一测，看看是否有卡顿和延迟的情况出现。一般来说，至少20分钟内的漂移是比较小的。
+
+
+## 6. 调试效果
+建议先不要着急接入steamvr，应该先多测一测，确保在studio里边能有比较稳定的效果。  
+默认是打开了磁力计的，如果你房间的磁场比较干净，应该会有不错的效果。如果你发现studio里边的动作失真比较严重，且每次重新设置T-Pose后不一会儿就又飘了，则有可能是房间的磁场干扰比较大。建议关掉磁力计。
+
+***可通过将 player_config.json 文件中的 `use_magnetometer` 选项由 `true` 改为 `false` 来关闭磁力计***
+
+![use_magnetometer](img/cancel_mag.png)
+
+***关闭磁力计后，为了尽量减小漂移，建议每次使用时，在佩戴在身上前，先连好网线并插上充电宝，将所有tracker都放在地上或桌面上，让studio里边的motion那一栏都变成static，保持一分钟左右，这样会估计出一个非常好的零偏；再将各个tracker佩戴到身上，注意不要断电***
 
 
 ---

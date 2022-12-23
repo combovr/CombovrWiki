@@ -5,5 +5,5 @@
 
 ## 使用教程
 
-* [Mark I](markI.md)
+* [Mark I](markI.md) (已停售)
 * [Combo Link](comboLink.md)
