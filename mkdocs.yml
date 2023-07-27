@@ -3,6 +3,7 @@ nav:
     - Home: index.md
     - Mark I: markI.md
     - Combo Link: comboLink.md
+    - Combo Air: comboAir.md
 
 theme: 
     name: material
